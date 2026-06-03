@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🐾 PetShop Feliz</title>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <h1>🐾 PetShop Feliz</h1>
+    <p>Todo para tu mejor amigo, ¡con mucho amor y colores!</p>
+  </div>
+  <button id="cartBtn" class="cart-btn">🛒 <span id="cartCount">0</span></button>
+</header>
+
+<main>
+  <section id="products" class="grid"></section>
+</main>
+
+<!-- Modal Carrito -->
+<div id="cartModal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close" data-close>✖</button>
+    <h2>🛒 Tu Carrito</h2>
+    <ul id="cartList"></ul>
+    <div class="total">Total: <span id="cartTotal">$0.00</span></div>
+    <button id="checkoutBtn" class="btn-primary">💳 Pagar ahora</button>
+  </div>
+</div>
+
+<!-- Modal Pago -->
+<div id="payModal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close" data-close>✖</button>
+    <h2>💳 Pasarela de Pago (Simulada)</h2>
+    <p class="hint">Tip: usa cualquier tarjeta de 16 dígitos. Las terminadas en <b>0000</b> serán rechazadas.</p>
+    <form id="payForm">
+      <label>Nombre del titular
+        <input name="name" required placeholder="Juan Pérez">
+      </label>
+      <label>Número de tarjeta
+        <input name="number" required placeholder="4242 4242 4242 4242" maxlength="19">
+      </label>
+      <div class="row">
+        <label>Vencimiento
+          <input name="exp" required placeholder="12/28">
+        </label>
+        <label>CVV
+          <input name="cvv" required placeholder="123" maxlength="4">
+        </label>
+      </div>
+      <label>Email
+        <input name="email" type="email" required placeholder="tu@correo.com">
+      </label>
+      <button type="submit" class="btn-primary" id="payBtn">Pagar <span id="payTotal"></span></button>
+    </form>
+    <div id="payMsg" class="msg"></div>
+  </div>
+</div>
+
+<!-- Modal Confirmación -->
+<div id="okModal" class="modal hidden">
+  <div class="modal-content center">
+    <button class="close" data-close>✖</button>
+    <div class="celebration">🎉🐶🎉</div>
+    <h2>¡Pago exitoso!</h2>
+    <p>Tu orden <b id="orderId"></b> fue procesada.</p>
+    <p>Total cobrado: <b id="orderTotal"></b></p>
+    <button class="btn-primary" data-close>Volver a la tienda</button>
+  </div>
+</div>
+
+<footer>Hecho con 🐾 por PetShop Feliz</footer>
+<script src="/js/app.js"></script>
+</body>
+</html>

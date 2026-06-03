@@ -1,0 +1,12 @@
+{
+  "name": "pet-shop",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node -e \"require('./app.js').start()\""
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
