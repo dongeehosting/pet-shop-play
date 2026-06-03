@@ -74,13 +74,15 @@ app.get('/api/orders/:id', (req, res) => {
 
 // ---------- ARRANQUE ----------
 function start() {
-  const PORT = process.env.PORT || 3000;
-  return app.listen(PORT, () => {
-    console.log(`🐾 PetShop corriendo en http://localhost:${PORT}`);
+  const server = app.listen(() => {
+    const { port } = server.address();
+    console.log(`🐾 PetShop corriendo en http://localhost:${port}`);
   });
+  return server;
 }
 
 module.exports = { start, app };
 
 // Permite ejecutar directamente: `node app.js`
 if (require.main === module) start();
+
